@@ -1,0 +1,56 @@
+.App {
+  background-color: #282c34;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height:10vh;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.colorPickerItem {
+  display:flex; 
+  color:#eee; 
+  margin: 10px 20px 10px 20px;
+}
+
+.cpLabel {
+  margin: 0px 20px 0px 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: stretch;
+}
+
+.left {
+  flex: 1;
+  height:90vh;
+  overflow: auto;
+  position: relative;
+}
+
+.right {
+  flex: 3;
+  position: relative;
+}
+
+.FilesHandler {
+  position: absolute;
+  top: 12px;
+  left: 520px;
+  color: #eee;
+}
+
+
+h4 {
+  margin-bottom: 10px;
+}

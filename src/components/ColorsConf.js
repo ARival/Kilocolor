@@ -1,0 +1,40 @@
+export default 
+{
+    "window_background": "#1e222a",
+    "main_background": "#454341",
+    "panel_background": "#333130",
+    "control_background": "#282625",
+    "foreground": "#898989",
+    "text": "#acacac",
+    "knob": "#333130",
+    "unimportant_text": "#797876",
+    "passive": "#6a6968",
+    "active": "#6a9dea",
+    "modulation": "#ff8020",
+    "audio_rate_modulation": "#71c742",
+    "aux_modulation": "#dcc959",
+    "modulation_background": "#000000",
+    "alert": "#bf312e",
+    "encoder": "#5c5b5b",
+    "handle": "#cacaca",
+    "mute": "#ab211e",
+    "solo": "#2f861a",
+    "left": "#61b264",
+    "right": "#b460ae",
+    "mid": "#437ddd",
+    "side": "#d79e4f",
+    "selection_background": "#3c4a60",
+    "selection_foreground": "#eeeeee",
+    "grid_major": "#434140",
+    "grid_minor": "#353332",
+    "disabled_tint": "#888888",
+    
+    "phase_plant_backdrop": "",
+    "phase_plant_backdrop_alpha": "1.0",
+    
+    "multipass_backdrop": "",
+    "multipass_backdrop_alpha": "1.0",
+
+    "snap_heap_backdrop": "",
+    "snap_heap_backdrop_alpha": "1.0"
+}
