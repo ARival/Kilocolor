@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Kilohearts Color Picker</p>
+        <p>Kilohearts Color Picker by <a href="https://twitter.com/8bitpimp" target="_blank">A_Rival</a></p>
       </header>
       <div className="main">
         <div className="left">
