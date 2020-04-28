@@ -26,7 +26,7 @@ const FilesHandler = (props) => {
       if (Exceptions.indexOf(key) != -1) return
       obj[key] = obj[key].substring(1)
     })
-    const blob = new Blob([JSON.stringify(obj)], { type: 'application/javascript;charset=utf-8' })
+    const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/javascript;charset=utf-8' })
 
     let url = window.URL.createObjectURL(blob);
     let a = document.createElement('a');
