@@ -189,7 +189,7 @@ const ColorPreview = (props) => {
   const disabledRGBText = colorAdjust(disabled_tint, -50)
   
   const whiteKeyColor = handle
-  const blackKeyColor = passive
+  const blackKeyColor = text
 
   return (
     <div style={{margin:'10px 10px 10px 10px', position:"relative"}}>
