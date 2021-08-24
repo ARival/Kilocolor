@@ -1,6 +1,11 @@
-.App {
+
+#root {
   background-color: #000;
   font: 1rem 'Open Sans', sans-serif;
+  height: 100vh;
+}
+.App {
+  overflow-x: hidden;
 }
 
 .App-header {
@@ -9,29 +14,36 @@
   justify-content: space-between;
   font-size: 16px;
   color: white;
-  padding: 0px 16px;
+  padding: 8px 16px;
   /* flex-direction: column; */
   column-gap: 8px;
   background-color: #000;
   border-bottom: #222 1px solid;
-  margin-bottom: 16px;
 }
+
+h2 {
+  font-size: 20px;
+  padding: 0px 0;
+  margin: 0;
+}
+
 
 .FilesHandler {
   display: flex;
   position: relative;
   color: #eee;
   column-gap: 8px;
+  overflow: hidden;
   
 }
 
 input[type="file"], input[type="button"] {
   position: absolute;
   z-index: -1;
-  top: 10px;
-  left: 8px;
-  font-size: 14px;
-  color: #b8b8b8;
+  top: 0px;
+  left: 0px;
+  font-size: 18px;
+  /* color: #b8b8b8; */
 }
 .button-wrap {
   position: relative;
@@ -42,10 +54,9 @@ input[type="file"], input[type="button"] {
   cursor: pointer;
   border-radius: 4px;
   background-color: #3b3b3b;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
-  cursor: pointer !important;
   transition: background-color .15s;
 }
 
@@ -84,32 +95,51 @@ a:link, a:visited {
 }
 
 .main {
+  padding-top: 16px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
+  align-items: flex-start;
+  column-gap: 16px;
 }
 
 .left {
   display: flex;
+  flex-direction: column;
+  position: relative;
+  row-gap: 16px;
+}
+
+.colorDrawer {
+  display: flex;
+  /* justify-content: center; */
+  position: absolute;
+  /* left: -288px; */
+  top: 60px;
+  transition: left .25s;
+}
+.colorDrawer-subcontainer {
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  width: 256px;
   flex-wrap: wrap;
-  /* flex: 1; */
   overflow: auto;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  row-gap: 16px;
+  padding: 16px;
+
 }
 
 .color {
     /* border-radius: 8px; */
     display: flex;
-    flex: 1 1 250px;
-    height: 100px;
+    /* flex: 1 1 250px; */
+    height: 64px;
     /* width: max-content;
     max-width: 250px;
     */
-    min-width: 220px;
+    min-width: 64px;
     border: none;
     outline: none;
     -webkit-appearance: none;
@@ -123,17 +153,13 @@ a:link, a:visited {
 }
 .color::-webkit-color-swatch {
     border: none;
+    padding: 0; 
     /* border-radius: 8px; */
 }
 .color::-moz-color-swatch {
     border: none;
+    padding: 0; 
     /* border-radius: 8px; */
-}
-
-.right {
-  flex: 3;
-  position: relative;
-
 }
 
 

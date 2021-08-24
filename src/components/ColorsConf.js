@@ -28,13 +28,10 @@ export default
     "grid_major": "#434140",
     "grid_minor": "#353332",
     "disabled_tint": "#888888",
-    
     "phase_plant_backdrop": "",
     "phase_plant_backdrop_alpha": "1.0",
-    
     "multipass_backdrop": "",
     "multipass_backdrop_alpha": "1.0",
-
     "snap_heap_backdrop": "",
     "snap_heap_backdrop_alpha": "1.0"
 }

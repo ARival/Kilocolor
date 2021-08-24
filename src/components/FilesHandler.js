@@ -14,6 +14,7 @@ const FilesHandler = (props) => {
 
         j[key] = `#${j[key]}`
       })
+      console.log(j);
       onFileChosenComplete(j)
     }
     fileReader.readAsText(file)
@@ -37,9 +38,9 @@ const FilesHandler = (props) => {
 
   return (
     <div className="FilesHandler">
-      <div class="button" style={{display: 'flex', flexDirection: 'column',}}>
+      <div style={{display: 'flex', flexDirection: 'column',}}>
         {/* File Loader */}
-        <label for="file" style={{textAlign:"left", marginTop:0}}>Load File</label>
+        <label className="button" htmlFor="file" >Load File</label>
         <input type='file'
           id='file'
           className='input-file'
@@ -49,7 +50,7 @@ const FilesHandler = (props) => {
 
       </div>
       <div style={{display: 'flex', flexDirection: 'column',}}>
-        <label class="button" for="fileSave" style={{textAlign:"left", marginTop:0}}>Save File</label>
+        <label className="button" htmlFor="fileSave" style={{textAlign:"left", marginTop:0}}>Save File</label>
         <input type='button'
           id='fileSave'
           className='filesave'
