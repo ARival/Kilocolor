@@ -10,7 +10,7 @@ const FilesHandler = (props) => {
       const content = fileReader.result
       var j = JSON.parse(content)
       Object.keys(j).forEach((key)=> {
-        if (Exceptions.indexOf(key) != -1) return
+        if (Exceptions.indexOf(key) !== -1) return
 
         j[key] = `#${j[key]}`
       })
@@ -23,7 +23,7 @@ const FilesHandler = (props) => {
     console.log("filesave")
     const obj = {...conf}
     Object.keys(obj).forEach((key)=> {
-      if (Exceptions.indexOf(key) != -1) return
+      if (Exceptions.indexOf(key) !== -1) return
       obj[key] = obj[key].substring(1)
     })
     const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/javascript;charset=utf-8' })
@@ -37,23 +37,27 @@ const FilesHandler = (props) => {
 
   return (
     <div className="FilesHandler">
-      {/* File Loader */}
-      <h4 style={{textAlign:"left", marginTop:0}}>Load File</h4>
-      <input type='file'
-        id='file'
-        className='input-file'
-        accept='.conf'
-        onChange={(e)=>{onFileChosen(e.target.files[0])}}
-        />
-        <br />
-      <h4 style={{textAlign:"left"}}>Save File</h4>
-      <input type='button'
-        id='fileSave'
-        className='filesave'
-        accept='.conf'
-        value='save as'
-        onClick={(e)=>{onFileSave()}}
-        />
+      <div class="button" style={{display: 'flex', flexDirection: 'column',}}>
+        {/* File Loader */}
+        <label for="file" style={{textAlign:"left", marginTop:0}}>Load File</label>
+        <input type='file'
+          id='file'
+          className='input-file'
+          accept='.conf'
+          onChange={(e)=>{onFileChosen(e.target.files[0])}}
+          />
+
+      </div>
+      <div style={{display: 'flex', flexDirection: 'column',}}>
+        <label class="button" for="fileSave" style={{textAlign:"left", marginTop:0}}>Save File</label>
+        <input type='button'
+          id='fileSave'
+          className='filesave'
+          accept='.conf'
+          value='save as'
+          onClick={(e)=>{onFileSave()}}
+          />
+      </div>
 
     </div>
   )

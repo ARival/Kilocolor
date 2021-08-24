@@ -1,10 +1,7 @@
 import React from 'react'
-import { SketchPicker } from 'react-color'
-import { useState } from 'react'
 
 const ColorPicker = (props) => {
   const {color, setColor, label} = props
-  const [displayColorPicker, setDisplayColorPicker] = useState(false)
 
   const styles = {
     color: {
@@ -32,41 +29,38 @@ const ColorPicker = (props) => {
       bottom: '0px',
       left: '0px',
     },
+    cpLabel: {
+      color: 'white',
+      position: 'absolute',
+      width: 'calc(100% - 16px)',
+      padding: '0px 12px',
+      textAlign: 'center',
+      fontWeight: 'normal',
+      bottom: 8,
+      lineHeight: '24px',
+      pointerEvents: 'none',
+    },
+    input: {
+      border: 'none',
+      padding: 0,
+      width: 100,
+      height: 30,
+      borderRadius: 12,
+    }
+
   }
 
-  const handleColorChange = (color) => {
-    console.log(color)
-    setColor(label, color.hex )
+  const handleColorChange = (e) => {
+    console.log(e.target.value)
+    const color = e.target.value
+    if (color) setColor(label, color)
   }
 
-  const handleClickSwatch = (e) => {
-    setDisplayColorPicker(true)
-  }
-
-  const handleCloseColorPicker = (e) => {
-    setDisplayColorPicker(false)
-  }
-  
   return (
-    <div style={{display:"flex"}}>
-      <div style={{display:"flex 1 0"}}>
-        <div className="colorPickerItem" >
-          <div style={styles.swatch} onClick={handleClickSwatch}>
-            <div style={styles.color} ></div>
-          </div>
-          <div>
-            {displayColorPicker ? 
-            <div style={styles.colorPicker}>
-              <div style={styles.cover} onClick={handleCloseColorPicker}></div>
-                <SketchPicker color={color} disableAlpha={true} onChange={handleColorChange}/>
-            </div>
-            : null}
-          </div>
-          <div className="cpLabel">
-            <label>{props.label}</label>
-          </div>
-        </div>
-      </div>
+    <div style={{display:"flex", position: 'relative'}}>
+      <input className="color" type="color" id="color" defaultValue={color} name="color" onChange={handleColorChange}></input>
+      <div style={styles.cpLabel}>{props.label}</div>
+      {/* <label style={styles.cpLabel} htmlFor="color">{props.label}</label> */}
     </div>
   )
 
