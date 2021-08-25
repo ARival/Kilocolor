@@ -9,12 +9,23 @@ import Exceptions from './components/Exceptions.js'
 import RivalIcon from './svg/RivalIcon'
 import ReactTooltip from 'react-tooltip'
 import ColorDrawer from './components/ColorDrawer'
+import { ThemePresetData } from './components/ThemePresetData'
 
 function App() {
   const [conf, setConf] = useState(ColorsConf)
 
   const onFileChosenComplete = (obj) => {
     setConf(obj)
+  }
+
+  const setIndex = (index) => {
+    const colorObj = {...ThemePresetData[index].data}
+    Object.keys(colorObj).forEach((key)=> {
+      if (Exceptions.indexOf(key) !== -1) return
+
+      colorObj[key] = `#${colorObj[key]}`
+    })
+    setConf(colorObj)
   }
 
   const ColorPickerList = useMemo(() => {
@@ -53,7 +64,7 @@ function App() {
         </div>
       </div>
       <ReactTooltip />
-      <ColorDrawer ColorPickerList={ColorPickerList} />
+      <ColorDrawer ColorPickerList={ColorPickerList} setIndex={setIndex} colorOptions={ThemePresetData}/>
     </div>
   );
 }

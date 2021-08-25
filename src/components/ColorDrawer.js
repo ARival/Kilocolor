@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import PaletteClose from '../svg/PaletteClose'
 import PaletteOpen from '../svg/PaletteOpen'
+import ColorSelect from './ColorSelect'
 
-const ColorDrawer = ({ColorPickerList}) => {
+const ColorDrawer = ({ColorPickerList, setIndex, colorOptions}) => {
   const [show, setShow] = useState(true)
 
   return (
@@ -11,6 +12,7 @@ const ColorDrawer = ({ColorPickerList}) => {
         <div style={{width: '100%',}}>
           <span style={{fontSize: 16, fontWeight: 700, color: 'white'}}>Colors</span>
         </div>
+        <ColorSelect setIndex={setIndex} colorOptions={colorOptions} />
         <div style={{display: 'flex', flexWrap: 'wrap',}}>
           {ColorPickerList}
         </div>
@@ -24,6 +26,7 @@ const ColorDrawer = ({ColorPickerList}) => {
         borderTopRightRadius: '8px',
         borderBottomRightRadius: '8px',
         backgroundColor: '#222',
+        cursor: 'pointer',
       }} onClick={() => setShow(!show)}>
         {show ? <PaletteOpen /> : <PaletteClose /> }
       </div>
