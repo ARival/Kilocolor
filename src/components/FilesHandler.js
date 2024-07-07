@@ -1,5 +1,5 @@
 import React from 'react'
-import Exceptions from './Exceptions.js'
+import { Exceptions } from './Exceptions.js'
 
 const FilesHandler = (props) => {
   const {onFileChosenComplete, conf} = props

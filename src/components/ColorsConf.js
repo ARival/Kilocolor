@@ -1,4 +1,4 @@
-export default 
+export const ColorsConf =  
 {
     "window_background": "#1e222a",
     "main_background": "#454341",

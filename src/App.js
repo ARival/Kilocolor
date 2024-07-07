@@ -1,13 +1,13 @@
 import React from 'react'
 import {useState, useMemo} from 'react'
 import './App.css'
-import ColorsConf from './components/ColorsConf.js'
+import { ColorsConf } from './components/ColorsConf.js'
 import ColorPicker from './components/ColorPicker'
 import NewColorPreview from './components/NewColorPreview'
 import FilesHandler from './components/FilesHandler'
-import Exceptions from './components/Exceptions.js'
+import { Exceptions } from './components/Exceptions.js'
 import RivalIcon from './svg/RivalIcon'
-import ReactTooltip from 'react-tooltip'
+import { Tooltip } from 'react-tooltip'
 import ColorDrawer from './components/ColorDrawer'
 import { ThemePresetData } from './components/ThemePresetData'
 
@@ -63,7 +63,7 @@ function App() {
           <NewColorPreview {...conf}/>
         </div>
       </div>
-      <ReactTooltip />
+      <Tooltip />
       <ColorDrawer ColorPickerList={ColorPickerList} setIndex={setIndex} colorOptions={ThemePresetData}/>
     </div>
   );

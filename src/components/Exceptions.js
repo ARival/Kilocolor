@@ -1,4 +1,4 @@
-export default [
+export const Exceptions = [
   "phase_plant_backdrop",
   "phase_plant_backdrop_alpha",
   "multipass_backdrop",

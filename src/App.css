@@ -195,7 +195,14 @@ select::-ms-expand {
     padding:0;
     cursor: pointer;
     font-weight: normal;
+    transition: transform 0.1s linear;
 }
+
+.color:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
 .color::-webkit-color-swatch-wrapper {
     border: none;
     padding: 0; 

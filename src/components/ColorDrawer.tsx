@@ -3,7 +3,13 @@ import PaletteClose from '../svg/PaletteClose'
 import PaletteOpen from '../svg/PaletteOpen'
 import ColorSelect from './ColorSelect'
 
-const ColorDrawer = ({ColorPickerList, setIndex, colorOptions}) => {
+export interface IColorDrawerProps {
+  ColorPickerList: Element[];
+  setIndex: (index: number) => void;
+  colorOptions: string[];
+}
+
+const ColorDrawer = ({ColorPickerList, setIndex, colorOptions}: IColorDrawerProps) => {
   const [show, setShow] = useState(true)
 
   return (
